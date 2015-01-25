@@ -1,0 +1,165 @@
+---
+layout: post
+title:  "Linked List III: Double-linked list"
+date:   2006-04-10 18:26:00
+categories: [Programming]
+permalink: post/2006/04/10/Linked-List-III-Double-linked-list.aspx
+---
+<p>A straight forward implementation of a double-linked list that implements the 
+interface,</p>
+<pre>    <b>interface</b> IDoubleLinkedList&lt;T&gt;: ILinkedList&lt;T&gt; {
+        IEnumerable&lt;T&gt; Backwards { get; }
+    }
+</pre>
+<p>can be implemented as,</p>
+<pre>    <b>class</b> DoubleLinkedList&lt;T&gt;: IDoubleLinkedList&lt;T&gt;, IEnumerable&lt;T&gt; {
+
+        <b>private</b> <b>class</b> Node {
+            <b>public</b> T Data;
+            <b>public</b> Node Next;
+            <b>public</b> Node Previous;
+        }
+
+        <b>private</b> Node _last;
+
+        <b>public</b> DoubleLinkedList() { }
+
+        <b>public</b> <b>void</b> Add(T value) {
+            Node newNode = <b>new</b> Node();
+            newNode.Data = value;
+            <b>if</b> (_last == <b>null</b>) {
+                newNode.Next = newNode;
+                newNode.Previous = newNode;
+                _last = newNode;
+            }
+            <b>else</b> {
+                newNode.Next = _last.Next;
+                _last.Next.Previous = newNode;
+                _last.Next = newNode;
+                newNode.Previous = _last;
+                _last = newNode;
+            }
+        }
+
+        <b>public</b> <b>void</b> Clear() {
+            _last = <b>null</b>;
+        }
+
+        <b>public</b> IEnumerator&lt;T&gt; GetEnumerator() {
+            <b>if</b> (_last != <b>null</b>) {
+                Node current = _last;
+                <b>do</b> {
+                    current = current.Next;
+                    yield <b>return</b> current.Data;
+                } <b>while</b> (current != _last);
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() {
+            <b>return</b> GetEnumerator();
+        }
+
+        <b>public</b> IEnumerable&lt;T&gt; Backwards {
+            get {
+                <b>if</b> (_last != <b>null</b>) {
+                    Node current = _last;
+                    <b>do</b> {
+                        yield <b>return</b> current.Data;
+                        current = current.Previous;
+                    } <b>while</b> (current != _last);
+                }
+            }
+        }
+    }</pre>
+<p>With a casual comparison of this implementation to the implementation of
+<span class="code">LinkList&lt;T&gt;</span> you will see that most of the methods are
+the same. <span class="code">Clear()</span> and <span class="code">GetEnumator()</span>
+are identical. <span class="code">Add()</span> is nearly identical; in fact, it
+would be identical if we changed the <span class="code">Node</span>
+implementation to</p>
+<pre>        <b>private</b> <b>class</b> Node {
+            <b>public</b> T Data;
+            <b>private</b> Node _next;
+            <b>public</b> Node Previous;
+
+            <b>public</b> Node Next {
+                get {
+                    <b>return</b> _next;
+                }
+                set {
+                    _next = value;
+                    value.Previous = <b>this</b>;
+                }
+            }
+        }</pre>
+<p>With this change to the <span class="code">Node</span> class, the only
+difference between <span class="code">LinkedList&lt;T&gt;</span> and
+<span class="code">DoubleLinked&lt;T&gt;</span> is the <span class="code">Node</span>
+class and the <span class="code">Backwards</span> property. It seems obvious we
+should use inheritance to share code.
+<span class="code">DoubleLinked&lt;T&gt;</span> should derive from <span class="code">
+LinkedList&lt;T&gt;</span>. To allow code sharing we need
+to make some changes to <span class="code">LinkedList&lt;T&gt;</span>. First we
+need to change <span class="code">Node</span> implementation to allow
+<span class="code">DoubleLink&lt;T&gt;</span> to override the behavior of
+<span class="code">Next</span>,</p>
+<pre>        <b>protected</b> <b>class</b> Node {
+            <b>public</b> T Data;
+            <b>private</b> Node _next;
+            <b>public</b> <b>virtual</b> Node Next { get { <b>return</b> _next; } set { _next = value; } }
+        }</pre>
+<p>Then we need to add,</p>
+<pre>        <b>protected</b> Node Last { get { <b>return</b> _last; } }</pre>
+<p>to allow <span class="code">DoubleLinked&lt;T&gt;</span> to access to
+<span class="code">_last</span> but not modify it. <span class="code">DoubleLink&lt;T&gt;</span>
+need <span class="code">Last</span> to implement <span class="code">Backwards</span>. Additionally we need to
+introduce</p>
+<pre>        <b>protected</b> <b>virtual</b> Node CreateNode() { <b>return</b> <b>new</b> Node(); }</pre>
+<p>and change the first statement in the <span class="code">Add()</span> method to,</p>
+<pre>            Node newNode = CreateNode();</pre>
+<p>to allow <span class="code">DoubleLinked&lt;T&gt;</span> to override which class to
+create for the nodes in the list. This allows <span class="code">DoubleLink&lt;T&gt;</span>
+to create <span class="code">DoubleNode</span> instead of <span class="code">
+Node</span>. With these changes we can now change the implementation of
+<span class="code">DoubleLink&lt;T&gt;</span> implementation to,</p>
+<pre>    <b>class</b> DoubleLinkedList&lt;T&gt;: LinkedList&lt;T&gt;, IDoubleLinkedList&lt;T&gt; {
+
+        <b>protected</b> <b>class</b> DoubleNode: Node {
+            <b>public</b> DoubleNode Previous;
+
+            <b>public</b> <b>override</b> Node Next {
+                get {
+                    <b>return</b> <b>base</b>.Next;
+                }
+                set {
+                    <b>base</b>.Next = value;
+                    ((DoubleNode)value).Previous = <b>this</b>;
+                }
+            }
+        }
+
+        <b>public</b> IEnumerable&lt;T&gt; Backwards {
+            get {
+                <b>if</b> (Last != <b>null</b>) {
+                    DoubleNode current = (DoubleNode)Last;
+                    <b>do</b> {
+                        yield <b>return</b> current.Data;
+                        current = current.Previous;
+                    } <b>while</b> (current != Last);
+                }
+            }
+        }
+
+        <b>protected</b> <b>override</b> LinkedList&lt;T&gt;.Node CreateNode() { <b>return</b> <b>new</b> DoubleNode();  }
+    }</pre>
+<p>There we have it. We used inheritance to share code. Unfortunately, we had to
+use casts to get this to work. The casts show we are now running into some
+limitations in the expressiveness of the C# type
+system. We know that all the items of the list will be of type <span class="code">
+DoubleNode</span> but we need to convince the compiler (and the CLR) with a cast
+in the <b><span class="code">set</span></b> part of the <span class="code">Next</span>
+method and the <span class="code">Backwards</span> property. It
+would be nice to write this without casts. Next time we look at a way to rid
+ourselves of one the cast in the <span class="code">Backwards</span> property and the virtual <span class="code">CreateNode()</span>
+method. We will also look at some possible ways to increase the expressiveness
+of C#'s type system to allow us to get rid of the final cast.</p>

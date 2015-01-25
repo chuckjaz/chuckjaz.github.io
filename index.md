@@ -1,46 +1,80 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
 ---
 {% include JB/setup %}
 
-Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
+<div class="site-header">
+  <center class="site-title">{{ site.title }}</center>
+  <center class="site-quote">{{ site.tagline }}</center>
+</div>
 
-Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
+<div class="side-panel">
+  <div class="author">
+    <div class="about-author">
+      <div class="author-name"> {{ site.author.name }} </div>
+    </div>
+    <div class="author-description">
+      <p>Chuck is a software engineer at <a href="google.com">Google</a> working
+      on <a href="cloud.google.com">cloud</a> tools.</p>
 
-## Update Author Attributes
+      <p>Prior to working at Google, Chuck was a software engineer at
+      <a href="microsoft.com">Microsoft</a> working on the XAML UI library for
+      all Microsoft platforms.</p>
 
-In `_config.yml` remember to specify your own data:
-    
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
+      <p>Previously he worked on frameworks and tools to support
+      <a href="xbox.com">XBOX ONE</a> and
+      developed Visual Studio features targeted towards the JavaScript
+      programmer that shipped in Visual Studio starting with Visual Studio 2012.
+      He also worked on XAML tools incorporated into Visual Studio starting in
+      Visual Studio 2005.</p>
 
-The theme should reference these variables whenever needed.
-    
-## Sample Posts
+      <p>Before Microsoft he work at Borland on Delphi (now part of
+      <a href="http://www.embarcadero.com/">Embarcadero Technologies)</a>.</p>
+    </div>
+  </div>
+</div>
 
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
+<div class="main-content">
+<!-- {% increment count %} -->
+{% for page in site.posts %}
+<h1><a href="{{ BASE_PATH }}{{ page.url }}">{{ page.title }}</a></h1>
+<div class="row post-full">
+  <div class="col-xs-12">
+    <div class="date">
+      <span>{{ page.date | date_to_long_string }}</span>
+    </div>
+    <div class="content">
+      {{ page.content }}
+    </div>
 
-    $ rm -rf _posts/core-samples
+  <div class="comments-link">
+    <a href="{{ BASE_PATH }}{{ page.url }}#disqus_thread">comments</a>
+  </div>
 
-Here's a sample "posts list".
+  {% unless page.categories == empty %}
+  <ul class="tag_box inline">
+    <li><i class="glyphicon glyphicon-open"></i></li>
+    {% assign categories_list = page.categories %}
+    {% include JB/categories_list %}
+  </ul>
+  {% endunless %}  
 
-<ul class="posts">
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+  {% unless page.tags == empty %}
+  <ul class="tag_box inline">
+    <li><i class="glyphicon glyphicon-tags"></i></li>
+    {% assign tags_list = page.tags %}
+    {% include JB/tags_list %}
+  </ul>
+  {% endunless %}
 
-## To-Do
+  {% if count >= 5 %}
+    {% break %}
+  {% endif %}
+  <!-- {% increment count %} -->
+{% endfor %}
 
-This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.
-
-
+<h1>Older posts</h1>
+<div class="archive-text">
+  See <a href="archive.html">archive</a> for older posts.
+</div>
+</div>

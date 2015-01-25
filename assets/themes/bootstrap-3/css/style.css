@@ -17,11 +17,66 @@
 h1, h2, h3, h4 {
   color: #f22430;
 }
+
+h1 a {
+  color: #f22430;
+}
+
+code {
+  color: inherit;
+}
+
+pre {
+  width: 700px;
+}
+
+div.main-content {
+  float: left;
+  width: 70%;
+}
+
+div.side-panel {
+  float: right;
+  width: 25%;
+  margin-top: 20px;
+}
+
+div.side-panel > div {
+  border: 1px solid silver;
+  padding: 5px;
+}
+
+div.side-panel div.author {
+  color: #808080;
+  font-size: 75%;
+}
+
+div.side-panel div.about-author {
+  font-size: 120%;
+  font-weight: bold;
+  border-bottom: 1px solid silver;
+  margin-bottom: 5px;
+}
+
 #footer {
   background-color: #fdcd60;
 }
 
+.site-header .site-title {
+  background: #cdcdcd;
+  color: white;
+  font-size: 36pt;
+  font-weight: bold;
+  font-style: italic;
+}
 
+.site-header .site-quote {
+  text-align: right;
+  font-size: 75%;
+}
+div.archive-text {
+  margin-bottom: 24pt;
+}
 
 /* posts index */
 .post > h3.title {
@@ -38,7 +93,7 @@ h1, h2, h3, h4 {
   text-align: left; }
 
 /* post-full*/
-.post-full .date {
+.date {
   margin-bottom: 20px;
   font-weight: bold; }
 
@@ -77,3 +132,20 @@ h1, h2, h3, h4 {
   background: #57A957;
   border: 1px solid #4c964d;
   color: #FFF; }
+
+code span.k {
+  font-weight: bold; }
+
+code span.kt {
+  font-weight: bold; }
+
+code span.c1 {
+  color: green;
+  font-style: italic; }
+
+code span.cm {
+  color: green;
+  font-style: italic; }
+
+code span.s {
+  color: blue; }
