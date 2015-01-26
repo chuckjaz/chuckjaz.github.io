@@ -49,6 +49,7 @@ layout: page
 
   <div class="comments-link">
     <a href="{{ BASE_PATH }}{{ page.url }}#disqus_thread">comments</a>
+    <span class="disqus-comment-count" data-disqus-url="{{ site.production_url }}{{ page.url }}"></span>
   </div>
 
   {% unless page.categories == empty %}
