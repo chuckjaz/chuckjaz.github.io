@@ -149,3 +149,7 @@ code span.cm {
 
 code span.s {
   color: blue; }
+
+#footer p {
+  font-size: 75%;
+}
