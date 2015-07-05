@@ -43,10 +43,10 @@ other words, the button's caption property was the caption of the button not a
 copy of it that will eventually be the caption of the window handle the object 
 was wrapping.
 
-This implied that the assignment had to have a side-effect; it would  
-eventually need to call the `SetText()` Windows function. Side-effects are not 
-generally considered kosher for assignemnts (other than the asignment itself); 
-but we knew it would solve our problem. 
+This implied that the assignment had to have a side-effect; it would eventually 
+need to call the `SetText()` Windows function. Side-effects are not generally 
+considered kosher for assignemnts (other than the asignment itself); but we knew 
+it would solve our problem. 
 
 > I now know of several ways we could have avoided side-effects but either none 
 occurred to us at the time or I just don't remember discussing them.
