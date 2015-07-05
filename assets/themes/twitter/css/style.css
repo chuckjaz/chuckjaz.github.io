@@ -6,6 +6,10 @@
 .container-narrow > hr {
   margin: 30px 0; }
 
+.content blockquote p {
+  font-size: 80%;
+}
+
 .navbar .nav {
   float: right; }
 
