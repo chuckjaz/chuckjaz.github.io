@@ -71,8 +71,8 @@ inlining simple get methods which would have complicated the compiler.
 Later we realized the serialization of the objects can be through their
 properties; but that is propbably a story best left for another time.
 
-In adding properties to Pascal, am sure we had some influences but don't recall 
-any other language having a similar construct. The closest at the time was 
-Visual Basics component properties, which is probably the genisis of the name. 
-However, you could not declare them in Basic, you could only access them from 
-Basic.
+In adding properties to Pascal, I am sure we had some influences but don't 
+recall any other language having a similar construct. The closest at the time 
+was Visual Basics component properties, which is probably the genisis of the 
+name. However, you could not declare them in Basic, you could only access them 
+from Basic.
