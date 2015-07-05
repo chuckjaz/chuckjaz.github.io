@@ -23,8 +23,8 @@ Later we added things like,
 
 to change the font of the button.
 
-We wanted this code to work. This is usually how like to design things. Start by
-writting some code down that should work and then begin brainstorming ways it 
+We wanted this code to work. This is usually how I like to design things. Start 
+by writting some code down that should work and then begin brainstorming ways it 
 can; poking holes in those designs along the way. Anders and I began to do just 
 that.
 
