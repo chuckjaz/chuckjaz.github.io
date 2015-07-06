@@ -30,6 +30,14 @@ pre {
   width: 700px;
 }
 
+div.content blockquote {
+  padding: 5px 10px;
+}
+
+div.content blockquote p {
+  font-size: 12px;
+}
+
 div.main-content {
   float: left;
   width: 70%;
