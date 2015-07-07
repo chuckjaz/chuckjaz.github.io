@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Properties on purpose"
+category: Programming
 tags: Language,Delphi,C#
 ---
 {% include JB/setup %}
