@@ -2,7 +2,7 @@
 layout: post
 title: "First-class class"
 category: Programming
-tags: Language,Delphi
+tags: [Language,Delphi]
 ---
 {% include JB/setup %}
 

@@ -17,7 +17,7 @@ before Delphi; where did they come from?
 The advent of Visual Basic was quite a shot across the bow for Borland. At the
 time, we were the hallmark of innovation and the champions of the developer.
 Visual Basic changed that. It made what we were working on at the time, Turbo
-Pascal for Windows, look clunky and dated. When TPW was release we received 
+Pascal for Windows, look clunky and dated. When TPW was released we received 
 strong feedback from our users that Visual Basic was better and much easier to
 use. It was back to the drawing board for us.
 
