@@ -14,15 +14,15 @@ layout: page
       <div class="author-name"> {{ site.author.name }} </div>
     </div>
     <div class="author-description">
-      <p>Chuck is a software engineer at <a href="google.com">Google</a> working
-      on <a href="cloud.google.com">cloud</a> tools.</p>
+      <p>Chuck is a software engineer at <a href="https://google.com">Google</a> working
+      on <a href="https://cloud.google.com">cloud</a> tools.</p>
 
       <p>Prior to working at Google, Chuck was a software engineer at
-      <a href="microsoft.com">Microsoft</a> working on the XAML UI library for
+      <a href="http://microsoft.com">Microsoft</a> working on the XAML UI library for
       all Microsoft platforms.</p>
 
       <p>Previously he worked on frameworks and tools to support
-      <a href="xbox.com">XBOX ONE</a> and
+      <a href="http://xbox.com">XBOX ONE</a> and
       developed Visual Studio features targeted towards the JavaScript
       programmer that shipped in Visual Studio starting with Visual Studio 2012.
       He also worked on XAML tools incorporated into Visual Studio starting in
