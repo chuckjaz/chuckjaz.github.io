@@ -46,7 +46,7 @@ was wrapping.
 
 This implied that the assignment had to have a side-effect; it would eventually 
 need to call the `SetText()` Windows function. Side-effects are not generally 
-considered kosher for assignemnts (other than the asignment itself); but we knew 
+considered kosher for assignments (other than the asignment itself); but we knew 
 it would solve our problem. 
 
 > I now know of several ways we could have avoided side-effects but either none 
