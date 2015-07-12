@@ -48,7 +48,7 @@ layout: page
     </div>
 
   <div class="comments-link">
-    <a href="{{ BASE_PATH }}{{ page.url }}#disqus_thread">comments</a>
+    <a href="{{ BASE_PATH }}{{ page.url }}/#disqus_thread">comments</a>
   </div>
 
   {% unless page.categories == empty %}
