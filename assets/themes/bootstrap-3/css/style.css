@@ -73,6 +73,12 @@ div.side-panel div.about-author {
   border-top: solid 2px;
 }
 
+div.a2a_kit.a2a_default_style {
+  bottom: 0px; 
+  right: 0px; 
+  background-color: transparent;
+}
+
 .site-header .site-title {
   background: #cdcdcd;
   color: white;
