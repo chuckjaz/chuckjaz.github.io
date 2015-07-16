@@ -68,6 +68,9 @@ div.side-panel div.about-author {
 
 #footer {
   background-color: #fdcd60;
+  padding-bottom: 50px; 
+  padding-top: 20px;
+  border-top: solid 2px;
 }
 
 .site-header .site-title {
