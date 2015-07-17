@@ -6,7 +6,7 @@ tags: [Delphi,Design]
 ---
 {% include JB/setup %}
 
-Valentine's Day, February 15, 1995.
+Valentine's Day, February 14, 1995.
 
 I was sitting the front row at the main hall in the Moscone Center. The lights 
 had just dimmed and a hush fell over the crowd. Several thousand people suddenly 
@@ -89,7 +89,7 @@ even included what we later called two-way editing.
 just me and Anders anymore. We had decided to cancel work on what was going to 
 be Borland Pascal 9.0 and focus completely on Delphi. Allen Bauer and Alex 
 Shtaygrud began working on the debugger and editor (explaining why we were using 
-`TEdit`) and Dave Schofield began making my chicken scratches of an IDE look 
+`TEdit`) and Dave Scofield began making my chicken scratches of an IDE look 
 presentable. Ironic that a developer that spent most of his career building UI 
 libraries and frameworks cannot create a decent looking UI to save his life.
 
