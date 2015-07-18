@@ -87,7 +87,7 @@ even included what we later called two-way editing.
 
 > The editor was actually just a `TEdit` so very rudimentary! By July it wasn't 
 just me and Anders anymore. We had decided to cancel work on what was going to 
-be Borland Pascal 9.0 and focus completely on Delphi. Allen Bauer and Alex 
+be Borland Pascal 8.0 and focus completely on Delphi. Allen Bauer and Alex 
 Shtaygrud began working on the debugger and editor (explaining why we were using 
 `TEdit`) and Dave Scofield began making my chicken scratches of an IDE look 
 presentable. Ironic that a developer that spent most of his career building UI 
