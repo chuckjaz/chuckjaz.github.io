@@ -27,7 +27,7 @@ the longest I had every spent working on one release and over a year longer than
 we had originally planned but we were finished and it felt very, very good.
 
 > Well, almost finished. The first versions of Delphi were not due to hit the
-streets until March 1st, 2 weeks after the 15th and we were in final stages of
+streets until March 1st, 2 weeks after the 14th and we were in final stages of
 signing-off the product but we were not finished just yet. There were a couple 
 of "stop ship" bugs that needed to be fixed and, as I remember it, Marc 
 Cousineau was the last man standing. He  missed that night. We missed him there 
