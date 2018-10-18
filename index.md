@@ -31,8 +31,8 @@ layout: page
       He also worked on XAML tools incorporated into Visual Studio starting in
       Visual Studio 2005.</p>
 
-      <p>Before Microsoft he work at Borland on Delphi </a>.
-      where he was Chief Scientist and Co- then Chief Archtect of Delphi
+      <p>Before Microsoft he work at Borland
+      where he was Chief Scientist and Co- then Chief Architect of Delphi
       (now part of <a href="http://www.embarcadero.com/">Embarcadero
       Technologies)</a></p>
     </div>
