@@ -15,9 +15,10 @@ layout: page
     </div>
     <div class="author-description">
       <p>Chuck is a software engineer at <a href="https://google.com">Google</a> working
-      on <a href="https://angular.io">Angular 2</a>.</p>
-      
-      <p>Prior to Angular he worked on <a href="https://cloud.google.com">cloud</a> tools.</p>
+        on <a href="https://www.android.com">Android</a>.</p>
+
+      <p>Prior to Android he worked on on <a href="https://angular.io">Angular</a> and 
+      <a href="https://cloud.google.com">cloud</a> tools.</p>
 
       <p>Prior to working at Google, Chuck was a software engineer at
       <a href="http://microsoft.com">Microsoft</a> working on the XAML UI library for
@@ -30,8 +31,10 @@ layout: page
       He also worked on XAML tools incorporated into Visual Studio starting in
       Visual Studio 2005.</p>
 
-      <p>Before Microsoft he work at Borland on Delphi (now part of
-      <a href="http://www.embarcadero.com/">Embarcadero Technologies)</a>.</p>
+      <p>Before Microsoft he work at Borland on Delphi </a>.
+      where he was Chief Scientist and Co- then Chief Archtect of Delphi
+      (now part of <a href="http://www.embarcadero.com/">Embarcadero
+      Technologies)</a></p>
     </div>
   </div>
 </div>
