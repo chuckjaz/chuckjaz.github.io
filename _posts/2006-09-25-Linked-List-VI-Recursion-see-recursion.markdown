@@ -3,7 +3,6 @@ layout: post
 title:  "Linked List VI: Recursion - see recursion"
 date:   2006-09-25 10:05:00
 categories: [Programming]
-permalink: post/2006/09/25/Linked-List-VI-Recursion-see-recursion.aspx
 ---
 <p>I finally have a definitive answer to the question of why <span class="code">MyNode</span> is needed.
 Consider the following, simplified, version of the <span class="code">LinkedList</span> classes I posed,</p>

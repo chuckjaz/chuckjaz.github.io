@@ -3,7 +3,6 @@ layout: post
 title:  "The Expression Problem: The JRuby Interpreter"
 date:   2006-10-26 14:23:00
 categories: [Programming]
-permalink: post/2006/10/26/The-Expression-Problem-The-JRuby-Interpreter.aspx
 ---
 <p>I previously discussed the expression problem could be solved with various patterns 
 including the

@@ -3,7 +3,6 @@ layout: post
 title:  "Linked Lists II: Simple Generics"
 date:   2006-04-01 12:25:00
 categories: [Programming]
-permalink: post/2006/04/01/Linked-Lists-II-Simple-Generics.aspx
 ---
 <p>In the last entry we looked at implementing a collection class 
 using a linked list data structure. This time I will show some ways to use that implementation

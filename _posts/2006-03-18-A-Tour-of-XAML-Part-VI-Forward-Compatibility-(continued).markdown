@@ -3,7 +3,6 @@ layout: post
 title:  "A Tour of XAML - Part VI - Forward Compatibility (continued)"
 date:   2006-03-18 16:26:00
 categories: [Programming, XAML]
-permalink: post/2006/03/18/A-Tour-of-XAML-Part-VI-Forward-Compatibility-(continued).aspx
 ---
 <p>Returning to the Party example we where using, lets say you want to author a
 document that has 10 kazoos when the version 2 assembly is present but replaces

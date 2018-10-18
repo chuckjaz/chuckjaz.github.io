@@ -3,7 +3,6 @@ layout: post
 title:  "OOPSLA '05"
 date:   2005-10-14 13:21:00
 categories: [Programming, OOPSLA]
-permalink: post/2005/10/14/OOPSLA-05.aspx
 ---
 Next week I will be attending
 <a href="http://www.oopsla.org:8080/2005/ShowPage.do?id=Home&amp;referrer=www.removingalldoubt.com">OOPSLA</a>. This

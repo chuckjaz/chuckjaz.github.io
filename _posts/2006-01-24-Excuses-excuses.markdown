@@ -3,7 +3,6 @@ layout: post
 title:  "Excuses, excuses"
 date:   2006-01-24 22:10:00
 categories: [Meta]
-permalink: post/2006/01/24/Excuses-excuses.aspx
 ---
 <p>OK, this is my first blog of the new year and it is already the 24th of
 January, but I have some fairly good excuses. I decided that I would take

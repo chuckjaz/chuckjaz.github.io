@@ -17,7 +17,7 @@ author :
   twitter : chuckjaz
   feedburner : removingalldoubt
 
-gems:
+plugins:
   - jekyll-redirect-from
   
 # The production_url is only used when full-domain names are needed

@@ -3,7 +3,6 @@ layout: post
 title:  "Operators, Generics and Policies"
 date:   2007-07-25 22:46:00
 categories: [Programming]
-permalink: post/2007/07/25/Operators-Generics-and-Policies.aspx
 ---
 <div class="text"><p>One of the limitations of C# generics is you cannot abstract over operators.
 That is not completely true, you can if the base class used in <code><strong>where</strong></code> clause has

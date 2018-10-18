@@ -3,7 +3,6 @@ layout: post
 title:  "BeginInvoke's last parameter: What's in a name?"
 date:   2008-06-16 13:21:00
 categories: [Programming]
-permalink: post/2008/06/16/BeginInvokes-last-parameter-Whats-in-a-name.aspx
 ---
 <p>I have been playing around with asynchronous programming lately and it 
 bothers me that the last parameter to the <em>begin invoke</em> pattern doesn't

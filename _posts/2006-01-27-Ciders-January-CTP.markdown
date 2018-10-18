@@ -3,7 +3,6 @@ layout: post
 title:  "Cider's January CTP"
 date:   2006-01-27 19:59:00
 categories: [Programming, Cider]
-permalink: post/2006/01/27/Ciders-January-CTP.aspx
 ---
 <p>Cider has been available since December in CTP form. This is really old news
 and reasons why I haven't blogged about it till now you can see my previous post

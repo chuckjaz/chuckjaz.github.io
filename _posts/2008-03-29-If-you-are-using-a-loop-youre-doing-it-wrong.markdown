@@ -3,7 +3,6 @@ layout: post
 title:  "If you are using a loop, you're doing it wrong"
 date:   2008-03-29 16:55:00
 categories: [Programming]
-permalink: post/2008/03/29/If-you-are-using-a-loop-youre-doing-it-wrong.aspx
 ---
 <div class="text"><p>"If you are using a loop, you're doing it wrong." </p>
 <p>That is the advice one of my college professors told us when he was teaching us

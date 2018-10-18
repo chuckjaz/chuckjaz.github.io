@@ -3,7 +3,6 @@ layout: post
 title:  "Simulating INumeric with policies"
 date:   2009-03-06 19:22:00
 categories: [Programming]
-permalink: post/2009/03/06/Simulating-INumeric-with-policies.aspx
 ---
 <div class="text"><p>After reading <a href="http://blogs.msdn.com/lucabol">Luca Bolognese's</a>
 blog post regarding using

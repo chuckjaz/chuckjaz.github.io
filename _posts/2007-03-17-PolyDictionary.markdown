@@ -3,7 +3,6 @@ layout: post
 title:  "PolyDictionary"
 date:   2007-03-17 13:30:00
 categories: [Programming]
-permalink: post/2007/03/17/PolyDictionary.aspx
 ---
 <p>CLR's standard <code>Dictionary&lt;K,T&gt;</code> allows you to express the 
 type of the key and the type value so you don't have to cast on the way in

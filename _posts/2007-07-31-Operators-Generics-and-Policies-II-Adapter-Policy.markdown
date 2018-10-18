@@ -3,7 +3,6 @@ layout: post
 title:  "Operators, Generics and Policies II: Adapter Policy"
 date:   2007-07-31 22:27:00
 categories: [Programming]
-permalink: post/2007/07/31/Operators-Generics-and-Policies-II-Adapter-Policy.aspx
 ---
 <div class="text"><p>The mixin technique in my
 <a href="post/2007/07/25/Operators-Generics-and-Policies.asp">last post</a> was a bit awkward to use

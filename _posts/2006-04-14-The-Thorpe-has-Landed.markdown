@@ -2,7 +2,6 @@
 layout: post
 title:  "The Thorpe has Landed"
 date:   2006-04-14 12:50:00
-permalink: post/2006/04/14/The-Thorpe-has-Landed.aspx
 ---
 <p>Danny Thorpe, a long time friend and colleague of mine, has a new, new job
 and a new <a href="http://blogs.msdn.com/dthorpe/">blog</a>. We worked together

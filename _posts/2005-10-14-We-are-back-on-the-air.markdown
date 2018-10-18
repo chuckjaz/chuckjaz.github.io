@@ -3,7 +3,6 @@ layout: post
 title:  "We are back on the air"
 date:   2005-10-14 22:37:00
 categories: [Blog]
-permalink: post/2005/10/14/We-are-back-on-the-air.aspx
 ---
 After a brief interlude, this site is now back up.
 I use a server in <a href="http://www.urbanpotato.net/">Brian's </a>home to host

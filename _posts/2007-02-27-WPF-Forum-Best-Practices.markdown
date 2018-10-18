@@ -3,7 +3,6 @@ layout: post
 title:  "WPF Forum Best Practices"
 date:   2007-02-27 09:45:00
 categories: [Programming]
-permalink: post/2007/02/27/WPF-Forum-Best-Practices.aspx
 ---
 <p>Rob's post
 <a href="http://rrelyea.spaces.live.com/Blog/cns!167AD7A5AB58D5FE!1676.entry">Best Forum Practices</a>

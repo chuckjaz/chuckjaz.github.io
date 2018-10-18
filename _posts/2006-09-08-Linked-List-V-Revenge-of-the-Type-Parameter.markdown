@@ -3,7 +3,6 @@ layout: post
 title:  "Linked List V: Revenge of the Type Parameter"
 date:   2006-09-08 12:37:00
 categories: [Programming]
-permalink: post/2006/09/08/Linked-List-V-Revenge-of-the-Type-Parameter.aspx
 ---
 <p>I honestly thought I was done with this topic but as it turns out I missed 
 something. I stated firmly that "currently, in C#, we are stuck with the cast"

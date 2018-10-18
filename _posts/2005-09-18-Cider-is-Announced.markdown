@@ -3,7 +3,6 @@ layout: post
 title:  "Cider is Announced"
 date:   2005-09-18 23:07:00
 categories: [Programming, PDC05, Cider, XAML]
-permalink: permalink.aspx/45a081b3-b81e-4237-9805-eef190d854fc
 ---
 Cider is now announced! In case you missed it at the PDC, Cider is the code
 name for the Visual Studio Designer for WPF pronounced Avalon according to

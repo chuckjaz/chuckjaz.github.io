@@ -3,7 +3,6 @@ layout: post
 title:  "Fatherly Advice To New Programmers"
 date:   2006-09-19 05:21:00
 categories: [Programming]
-permalink: /post/2006/09/19/Fatherly-Advice-To-New-Programmers.aspx
 redirect_from:
   - /PermaLink.aspx/a32977e2-cb7d-42ea-9d25-5e539423affd
   - /commentview.aspx/a32977e2-cb7d-42ea-9d25-5e539423affd

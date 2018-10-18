@@ -3,7 +3,6 @@ layout: post
 title:  "Linked Lists I: Simple implementation"
 date:   2006-03-26 12:07:00
 categories: [Programming]
-permalink: post/2006/03/26/Linked-Lists-I-Simple-implementation.aspx
 ---
 <p>Last time I investigated several ways to implement an expression evaluator
 using a procedural style and several object oriented styles. I used this to

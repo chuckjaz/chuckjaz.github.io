@@ -3,7 +3,6 @@ layout: post
 title:  "Linked List IV: Removing casts"
 date:   2006-04-14 13:56:00
 categories: [Programming]
-permalink: post/2006/04/14/Linked-List-IV-Removing-casts.aspx
 ---
 <p>In the last entry we successfully derived a double-linked list implementation 
 from a single-linked list implementation, but we had to use casts to get it to

@@ -3,7 +3,6 @@ layout: post
 title:  "PolyDictionary III: Cast away"
 date:   2007-03-26 19:02:00
 categories: [Programming]
-permalink: post/2007/03/26/PolyDictionary-III-Cast-away.aspx
 ---
 <p>The astute among you realized right away that <code>PolyDictionary</code> 
 does not really avoid a cast, it just hides it. The <code>TryGetValue()</code>

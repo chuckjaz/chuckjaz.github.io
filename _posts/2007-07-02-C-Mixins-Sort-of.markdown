@@ -3,7 +3,6 @@ layout: post
 title:  "C# Mixins - Sort of"
 date:   2007-07-02 23:42:00
 categories: [Programming]
-permalink: post/2007/07/02/C-Mixins-Sort-of.aspx
 ---
 <div class="text"><p>I recently needed to create a set of classes that was the combinatorial
 expansion of several implementation flavors of two independent sets of methods. Why I needed

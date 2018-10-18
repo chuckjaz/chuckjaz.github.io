@@ -3,7 +3,6 @@ layout: post
 title:  "To b | !b, that is the question"
 date:   2007-12-19 17:10:00
 categories: [Programming]
-permalink: 2007/12/19/To-b-%7C-!b-that-is-the-question.aspx
 ---
 <div class="text"><p>When I was reading
 <a href="http://www.amazon.com/First-Order-Logic-Raymond-M-Smullyan/dp/0486683702/ref=sr_11_1/102-8843584-4849732?ie=UTF8&amp;qid=1192783059&amp;sr=11-1">First-Order Logic</a> by

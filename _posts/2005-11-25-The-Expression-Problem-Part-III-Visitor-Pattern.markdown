@@ -3,7 +3,6 @@ layout: post
 title:  "The Expression Problem: Part III - Visitor Pattern"
 date:   2005-11-25 16:16:00
 categories: [Programming]
-permalink: post/2005/11/25/The-Expression-Problem-Part-III-Visitor-Pattern.aspx
 ---
 <div class="text"><p>So far we have looked at two ways to represent the following expression
 forms,</p>
@@ -45,14 +44,18 @@ that allows an operation to be separated from the class hierarchy into
 its own class. To demonstrate how a visitor pattern can be applied, I will first
 created a visitor interface that will be implemented by all visitors. It looks like,</p>
 
-{% highlight csharp %}
-public interface IExprVisitor<R> {
+<code><pre>
+public interface IExprVisitor&lt;R&gt; {
   R Visit(Literal literal);
   R Visit(Add add);
   R Visit(Subtract subtract);
   R Visit(Multiply multiply);
   R Visit(Divide divide);
-}{% endhighlight %}<sup><a name="ref-note1" href="#note1">1</a></sup>
+}
+</pre></code>
+
+<sup><a name="ref-note1" href="#note1">1</a></sup>
+
 <p>Here I use a generic type to leave the type of the return result open. The
 expression evaluator will use <code>double</code> but <code>double</code> isn't an appropriate return
 result for printing, for example. Using a type parameter allows different visitors
@@ -62,11 +65,11 @@ create an
 abstract class to represent the expressions, just as I did in the previous object
 oriented example.</p>
 
-{% highlight csharp %}
+<code><pre>
 public abstract class Expr {
-  public abstract R Accept<R>(IExprVisitor<R> visitor);
+  public abstract R Accept&lt;R&gt;(IExprVisitor&lt;R&gt; visitor);
 }
-{% endhighlight %}
+</pre></code>
 
 <p>The method <code>Accept()</code> is key to the visitor pattern.
 It accepts the visitor and, in turn, calls the correct <code>
@@ -75,17 +78,17 @@ method on the visitor, based on the type of the instance being visited. To do th
 the <code>Accept()</code> method and calls the correct method. To
 show how this is done I will implement the Literal expression form. </p>
 
-{% highlight csharp %}
+<code><pre>
 public class Literal: Expr {
   public double Value;
 
   public Literal(double value) { Value = value; }
 
-  public override R Accept<R>(IExprVisitor<R> visitor) {
+  public override R Accept&lt;R&gt;(IExprVisitor&lt;R&gt; visitor) {
     return visitor.Visit(this);
   }
 }
-{% endhighlight %}
+</pre></code>
 
 <p>The above <code>Literal</code> class is very similar to the
 original pure object oriented version with the addition of the <code>
@@ -96,7 +99,7 @@ to bind to based on the type of the <code>this</code> parameter.</p>
 <p>Next, as before, I introduce a base class to represent an abstraction of a
 binary operator.</p>
 
-{% highlight csharp %}
+<code><pre>
 public abstract class BinaryOperator: Expr {
   public Expr Right;
   public Expr Left;
@@ -106,7 +109,7 @@ public abstract class BinaryOperator: Expr {
     Left = left;
   }
 }
-{% endhighlight %}
+</pre></code>
 
 <p>Notice that I do not yet implement the <code>Accept()</code> method.
 I could have, after adding <code>R Visit(BinaryOperator binop)</code>
@@ -126,11 +129,11 @@ methods.</p>
 <p>Now that I have a base class for binary operators, I can now implement the
 binary operator expression forms.</p>
 
-{% highlight csharp %}
+<code><pre>
 public class Add: BinaryOperator {
   public Add(Expr left, Expr right) : base(left, right) { }
 
-  public override R Accept<R>(IExprVisitor<R> visitor) {
+  public override R Accept&lt;R&gt;(IExprVisitor&lt;R&gt; visitor) {
     return visitor.Visit(this);
   }
 }
@@ -138,7 +141,7 @@ public class Add: BinaryOperator {
 public class Subtract: BinaryOperator {
   public Subtract(Expr left, Expr right) : base(left, right) { }
 
-  public override R Accept<R>(IExprVisitor<R> visitor) {
+  public override R Accept&lt;R&gt;(IExprVisitor&lt;R&gt; visitor) {
     return visitor.Visit(this);
   }
 }
@@ -146,7 +149,7 @@ public class Subtract: BinaryOperator {
 public class Multiply: BinaryOperator {
   public Multiply(Expr left, Expr right) : base(left, right) { }
 
-  public override R Accept<R>(IExprVisitor<R> visitor) {
+  public override R Accept&lt;R&gt;(IExprVisitor&lt;R&gt; visitor) {
     return visitor.Visit(this);
   }
 }
@@ -154,11 +157,11 @@ public class Multiply: BinaryOperator {
 public class Divide: BinaryOperator {
   public Divide(Expr left, Expr right) : base(left, right) { }
 
-  public override R Accept<R>(IExprVisitor<R> visitor) {
+  public override R Accept&lt;R&gt;(IExprVisitor&lt;R&gt; visitor) {
     return visitor.Visit(this);
   }
 }
-{% endhighlight %}
+</pre></code>
 
 <p>The implementation of these should come as no surprise. They each
 override the <code>Accept()</code> method and call the visitor
@@ -166,41 +169,41 @@ method associated with their type.</p>
 <p>Now that we have the class hierarchy in place, I will now implement the
 expression evaluator as a visitor.</p>
 
-{% highlight csharp %}
-public class Evaluator: IExprVisitor<double> {
+<code><pre>
+public class Evaluator: IExprVisitor&lt;double&gt; {
   public Evaluator() { }
 
   public double Evaluate(Expr expr) {
     return expr.Accept(this);
   }
 
-  double IExprVisitor<double>.Visit(Literal literal) {
+  double IExprVisitor&lt;double&gt;.Visit(Literal literal) {
     return literal.Value;
   }
 
-  double IExprVisitor<double>.Visit(Add add) {
+  double IExprVisitor&lt;double&gt;.Visit(Add add) {
     return Evaluate(add.Left) + Evaluate(add.Right);
   }
 
-  double IExprVisitor<double>.Visit(Subtract subtract) {
+  double IExprVisitor&lt;double&gt;.Visit(Subtract subtract) {
     return Evaluate(subtract.Left) - Evaluate(subtract.Right);
   }
 
-  double IExprVisitor<double>.Visit(Multiply multiply) {
+  double IExprVisitor&lt;double&gt;.Visit(Multiply multiply) {
     return Evaluate(multiply.Left) * Evaluate(multiply.Right);
   }
 
-  double IExprVisitor<double>.Visit(Divide divide) {
+  double IExprVisitor&lt;double&gt;.Visit(Divide divide) {
     return Evaluate(divide.Left) / Evaluate(divide.Right);
   }
 }
-{% endhighlight %}
+</pre></code>
 
 <p>The expression evaluator can be used by creating a new visitor and calling
 the <code>Evaluate()</code> method of the evaluator, passing the root of the expression tree.
 For example,</p>
 
-{% highlight csharp %}
+<code><pre>
 Expr expr = new Add(new Multiply(new Literal(10), new Literal(4)),
   new Literal(2));
 
@@ -208,21 +211,21 @@ Evalutor evaluator = new Evaluator();
 double result = evaluator.Evaluate(expr);
 
 Console.WriteLine("The answer is {0}", result);
-{% endhighlight %}
+</pre></code>
 
 <p>The visitor pattern makes it easy to add new operations. To demonstrate this,
 as before, I will add a print operation. This looks very much like the
 expression evaluator above.</p>
 
-{% highlight csharp %}
-public class Printer: IExprVisitor<object> {
+<code><pre>
+public class Printer: IExprVisitor&lt;object&gt; {
   public Printer() { }
 
   public void Print(Expr expr) {
     expr.Accept(this);
   }
 
-  object IExprVisitor<object>.Visit(Literal literal) {
+  object IExprVisitor&lt;object&gt;.Visit(Literal literal) {
     Console.Write(literal.Value);
     return null;
   }
@@ -233,27 +236,27 @@ public class Printer: IExprVisitor<object> {
     Print(binOp.Right);
   }
 
-  object IExprVisitor<object>.Visit(Add add) {
+  object IExprVisitor&lt;object&gt;.Visit(Add add) {
     PrintBinaryOperator(add, '+');
     return null;
   }
 
-  object IExprVisitor<object>.Visit(Subtract subtract) {
+  object IExprVisitor&lt;object&gt;.Visit(Subtract subtract) {
     PrintBinaryOperator(subtract, '-');
     return null;
   }
 
-  object IExprVisitor<object>.Visit(Multiply multiply) {
+  object IExprVisitor&lt;object&gt;.Visit(Multiply multiply) {
     PrintBinaryOperator(multiply, '*');
     return null;
   }
 
-  object IExprVisitor<object>.Visit(Divide divide) {
+  object IExprVisitor&lt;object&gt;.Visit(Divide divide) {
     PrintBinaryOperator(divide, '/');
     return null;
   }
 }
-{% endhighlight %}
+</pre></code>
 
 <p>As this shows, using a parameterized type for the visitor interface is awkward
 when you don't have anything to return. What I would want to do is implement
@@ -272,40 +275,40 @@ verification by the compiler, however. To demonstrate the difficult of adding a
 new type, I will again add Power. The first step is to add the new
 <code>Power</code> type.</p>
 
-{% highlight csharp %}
+<code><pre>
 public class Power: BinaryOperator {
   public Power(Expr left, Expr right) : base(left, right) { }
 
-  public override R Accept<R>(IExprVisitor<R> visitor) {
+  public override R Accept&lt;R&gt;(IExprVisitor&lt;R&gt; visitor) {
     return visitor.Visit(this);
   }
 }
-{% endhighlight %}
+</pre></code>
 
 <p>Now we need to add a method to <code>IExprVisitor&lt;R&gt;</code>
 for the <code>Power</code> type that each visitor will need to implement. It looks like,</p>
 
-{% highlight csharp %}
+<code><pre>
 R Visit(Power power);
-{% endhighlight %}
+</pre></code>
 
 <p>Next I need to add a method for in each visitor to handle the new class. For
 <code>Evaluator</code> it is,</p>
 
-{% highlight csharp %}
-double IExprVisitor<double>.Visit(Power power) {
+<code><pre>
+double IExprVisitor&lt;double&gt;.Visit(Power power) {
   return Math.Pow(Evaluate(power.Left), Evaluate(power.Right));
 }
-{% endhighlight %}
+</pre></code>
 
 <p>And and for the <code>Printer</code> class it looks like.</p>
 
-{% highlight csharp %}
-object IExprVisitor<object>.Visit(Power power) {
+<code><pre>
+object IExprVisitor&lt;object&gt;.Visit(Power power) {
   PrintBinaryOperator(power, '^');
   return null;
 }
-{% endhighlight %}
+</pre></code>
 
 <p>This is just one way to apply the visitor pattern to the expression problem.
 Other ways have their own strengths and weaknesses by trading off different

@@ -3,7 +3,6 @@ layout: post
 title:  "Zero the value is not"
 date:   2008-10-31 06:32:00
 categories: [Programming]
-permalink: post/2008/08/31/Zero-the-value-is-not.aspx
 ---
 <div class="text"><p>One of my pet-peeves is code written like this,</p>
 <pre class="code"><strong>if</strong> (0 != value) { ... }</pre>

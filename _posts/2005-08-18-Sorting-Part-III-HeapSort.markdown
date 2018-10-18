@@ -40,7 +40,7 @@ given above; you swap each element, from _2_ to _n_, with its parent until you
 come across a parent that is greater than the element. The algorithm for this
 might look something like,
 
-{% highlight csharp %}
+```
 static void FormHeap(int[] a) {
   // form the heap
   for (int i = 1; i < a.Length; i++) {
@@ -55,7 +55,7 @@ static void FormHeap(int[] a) {
     }
   }
 }
-{% endhighlight %}
+```
 
 Note, that since C# numbers the array from _0_ to _n-1_ instead of from _1_ to
 _n_, we need to subtract add one to the index _j_ and then subtract it again
@@ -75,7 +75,7 @@ generations (or levels, as it is more traditional called) below it. This means
 we can restore order to the _heap_ in O(log N) comparisons. This might look
 like,
 
-{% highlight csharp %}
+```
 static void ReformHeap(int[] a, int i) {
   int j = 0;
   while (true) {
@@ -96,11 +96,11 @@ static void ReformHeap(int[] a, int i) {
     }
   }
 }
-{% endhighlight %}
+```
 
 We now need to do this <em>n</em> times to completely sort the array, meaning that we are guaranteed to sort a <em>heap</em> in O(N log N) comparisons. This gives us O(N log N) operations to form a <em>heap</em> and O(N log N) operations to sort a <em>heap</em> which means that we can sort any array, using a <em>heap</em> in O(N log N) (since big O notation throws away the constant 2 in 2N log N). Putting this together gives us the <em>HeapSort</em> invented by J.W.J. Williams,
 
-{% highlight csharp %}
+```
 static void HeapSort(int[] a) {
   // form the heap
   for (int i = 1; i < a.Length; i++) {
@@ -145,6 +145,6 @@ static void HeapSort(int[] a) {
     }
   }
 }
-{% endhighlight %}
+```
 
 Here we have it. An algorithm that is guaranteed to perform on the order of O(N log N) operations to sort an array! And here, you are apt to say, “Why doesn’t everyone use a HeapSort instead of a QuickSort if HeapSort is so much better?” Good question, I am glad you asked. There are several reasons why, but I will save that for another time.

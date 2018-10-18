@@ -3,7 +3,6 @@ layout: post
 title:  "PolyDictionary IV: By extension"
 date:   2007-03-31 23:06:00
 categories: [Programming]
-permalink: post/2007/03/31/PolyDictionary-IV-By-extension.aspx
 ---
 <p>The technique we used to build <code>PolyDictionary</code> can be used in other 
 places. For example, you can adapt a non-type-checked store to a

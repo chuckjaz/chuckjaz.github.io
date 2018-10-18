@@ -3,7 +3,6 @@ layout: post
 title:  "A Solution to a Puzzle"
 date:   2005-12-17 14:29:00
 categories: [Programming, Prolog, Puzzles]
-permalink: post/2005/12/17/A-Solution-to-a-Puzzle.aspx
 ---
 
 <p>A few months back <a href="http://www.winethirty.com/default.aspx">Randy
@@ -19,7 +18,7 @@ concise in Prolog so I volunteered to produce a Prolog version. I had to dust of
 Prolog</a> skills, I hadn't used Prolog since I used to support Turbo Prolog for
 <a href="http://www.borland.com">Borland</a>, so my skills are a bit rusty. Here is my solution,</p>
 
-{% highlight prolog %}
+```
 linkTurns([f, f, t, f, t, t, t, t, f, t, t, t, t, t, t, t,
    t, f, t, t, t, f, t, t, t, f]).
 
@@ -65,7 +64,7 @@ print_solution([Cell|Cells], [Move|Moves]) :-
    write(Cell), nl.
 
 goal :- solution(Cells, Moves), print_solution(Cells, Moves).
-{% endhighlight %}
+```
 
 <p>The clause <span class="code">linkTurns/1</span> represents where the string
 of blocks turns and where it doesn't. <span class="code">inrange/1</span>
@@ -84,9 +83,9 @@ kicks off the whole process (a dead giveaway to Turbo Prolog roots).
 both use,</p><p>
 </p>
 
-{% highlight prolog %}
+```
 ?- solution(Cells, Moves).
-{% endhighlight %}
+```
 
 <p>You will notice that both solutions are reflexive of each other so you could
 say there is really only one solution.</p>

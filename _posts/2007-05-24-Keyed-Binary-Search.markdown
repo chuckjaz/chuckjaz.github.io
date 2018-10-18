@@ -3,7 +3,6 @@ layout: post
 title:  "Keyed Binary Search"
 date:   2007-05-24 16:44:00
 categories: [Programming]
-permalink: post/2007/05/24/Keyed-Binary-Search.aspx
 ---
 <div class="text"><p>One thing that has always frustrated me about typical binary search routines
 found in libraries is they always assume you can easily produce a copy of the

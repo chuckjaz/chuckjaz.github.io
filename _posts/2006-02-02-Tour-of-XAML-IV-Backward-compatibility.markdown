@@ -3,9 +3,8 @@ layout: post
 title:  "Tour of XAML IV: Backward compatibility"
 date:   2006-02-02 13:50:00
 categories: [Programming, XAML]
-permalink: post/2006/02/02/Tour-of-XAML-IV-Backward-compatibility.aspx
 ---
-<div class="text"><p>XAML has support for both forward and backward compatibility of XAML
+<p>XAML has support for both forward and backward compatibility of XAML
 documents. To understand backwards compatibility in a more formal sense, think
 of a XAML reader combined with some set of assemblies as the predicate that
 defines a set. If the reader with the given set of assemblies accepts a XAML
@@ -33,26 +32,26 @@ given both <i>s<sub>1</sub></i> and <i>s<sub>2</sub></i>, XAML allows <i>s<sub>2
 <i>s<sub>1</sub></i> should be considered a reference to elements of <i>s<sub>2</sub></i>.</p>
 <p>To get more concrete, suppose you had an assembly that declared a single type,</p>
 
-{% highlight csharp %}
+```
 public class Balloon {
     Color _color;
 
     public Color Color { get { return _color; } set { _color = value; } }
 }
-{% endhighlight %}
+```
 
 <p>A XAML reader will infer a schema that would allow you to write a XAML
 document like,</p>
 
-{% highlight xml %}
+```
 <Balloon Color="Red" xmlns="...assembly-v1-uri..." />;
-{% endhighlight %}
+```
 
 <p>Now, lets say, in version 2 of the assembly you want to add a shape to the balloon
 class to support different balloon shapes. In the version 2 assembly you can modify
 the class to,</p>
 
-{% highlight csharp %}
+```
 public class Balloon {
     Color _color;
     Shape _shape;
@@ -60,13 +59,13 @@ public class Balloon {
     public Color Color { get { return _color; } set { _color = value; } }
     public Shape Shape { get { return _shape; } set { _shape = value; } }
 }
-{% endhighlight %}
+```
 
 <p>Now we can write a XAML document that refers to the new assembly by writing,</p>
 
-{% highlight xml %}
+```
 <Balloon Color="Red" Shape="Dog" xmlns="...assembly-v2-uri..."/>;
-{% endhighlight %}
+```
 
 <p>We, however, still want to read all XAML documents that refer to the previous
 assembly as well using the new assembly. We can do this by declaring, in the new
@@ -76,18 +75,18 @@ When the XAML reader sees that attribute, it will silently interpret all referen
 to "...assembly-v2-uri...". A XAML reader, presented with the version 2
 assembly, will treat,</p>
 
-{% highlight xml %}
+```
 <Balloon Color="Red" xmlns="...assembly-v1-uri..." />
-{% endhighlight %}
+```
 
 <p>exactly as if it was written as,</p>
 
-{% highlight xml %}
+```
 <Balloon Color="Red" xmlns="...assembly-v2-uri..." />
-{% endhighlight %}
+```
 
 <p>This allows all XAML documents referring to version 1 assembly to be readable
 when you only have version 2 of the assembly. In fact, assuming you follow CLR
 guidelines for evolving an assembly, any XAML file that was legal using the
 version 1 assembly will be legal using the version 2 assembly.</p>
-</div>
+

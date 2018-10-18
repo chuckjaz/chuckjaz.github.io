@@ -3,7 +3,6 @@ layout: post
 title:  "The Expression Problem: Part II - Object-oriented"
 date:   2005-11-19 12:49:00
 categories: [Programming]
-permalink: post/2005/11/19/The-Expression-Problem-Part-II-Object-oriented.aspx
 ---
 <p>Last time we took a procedural approach to solve the <i>expression problem</i>.
 This time I will demonstrate an object-oriented approach. As a
@@ -35,14 +34,14 @@ reminder, we want to model the following forms of expressions,</p>
 <p>The most natural thing to do in an object-oriented language is to make each of the above
 expression forms its own class. First, I will introduce a base class to provide an expression abstraction.</p>
 
-{% highlight csharp %}
+```
 abstract class Expr {
 }
-{% endhighlight %}
+```
 
 <p>Now I will now create a sub-class for each expression.</p>
 
-{% highlight csharp %}
+```
 class Literal: Expr {
   protected double Value;
 
@@ -76,24 +75,24 @@ class Multiply: BinaryExpr {
 class Divide: BinaryExpr {
   public Divide(Expr left, Expr right) : base(left, right) { }
 }
-{% endhighlight %}
+```
 
   <p>I created a base class for the binary expressions which I will take
   advantage of below. </p>
   <p>To evaluate the expression I will add an abstract virtual method,
   <code>Evaluate()</code>, to <code>Expr</code>. </p>
 
-{% highlight csharp %}
+```
 abstract class Expr {
     public abstract double Evaluate();
 }
-{% endhighlight %}
+```
 
 <p>Then I will override the <code>Evaluate()</code> method for
 each of the above classes. Evaluating a literal is simply returning the value of
 the literal so I modified the <code>Literal</code> class to,</p>
 
-{% highlight csharp %}
+```
 class Literal: Expr {
   protected double Value;
 
@@ -105,7 +104,7 @@ class Literal: Expr {
     return Value;
   }
 }
-{% endhighlight %}
+```
 
 <p>All binary expressions need to evaluate their left-hand expression and
 right-hand expression and then perform their operation on the results. To represent this, I
@@ -115,7 +114,7 @@ method. I sealed the <code>Evaluate()</code> method because I want
 descendants to override <code>EvaluateOp()</code> not
 <code>Evaluate()</code>.</p>
 
-{% highlight csharp %}
+```
 abstract class BinaryExpr: Expr {
   protected Expr Left;
   protected Expr Right;
@@ -131,11 +130,11 @@ abstract class BinaryExpr: Expr {
 
   protected abstract double EvaluateOp(double left, double right);
 }
-{% endhighlight %}
+```
 
 <p>Now I can implemented the concrete descendents of <code>BinaryExpr</code>.</p>
 
-{% highlight csharp %}
+```
 class Add: BinaryExpr {
   public Add(Expr left, Expr right) : base(left, right) { }
 
@@ -167,7 +166,7 @@ class Divide: BinaryExpr {
     return left / right;
   }
 }
-{% endhighlight %}
+```
 <p>The advantages an object-oriented approach are,</p>
 <ol>
 <li>New data types can be added without affecting any of the other data
@@ -195,7 +194,7 @@ for Power.</p>
 <p> To do this I will add a class to represent the Power expression form.
 This looks like,</p>
 
-{% highlight csharp %}
+```
 class Power: BinaryExpr {
   public Power(Expr left, Expr right) : base(left, right) { }
 
@@ -203,7 +202,7 @@ class Power: BinaryExpr {
     return Math.Pow(left, right);
   }
   }
-{% endhighlight %}
+```
 <p>Note that the <code>Power</code> data type can be added without
 modifying the other classes. </p>
 <p>The disadvantages to an object-oriented approach are,</p>
@@ -220,16 +219,16 @@ without careful planning.</li>
 the Print operation. First I will modify the base <code>Expr</code>
 class to add an abstract <code>Print()</code> method.</p>
 
-{% highlight csharp %}
+```
 abstract class Expr {
   public abstract double Evaluate();
   public abstract void Print();
 }
-{% endhighlight %}
+```
 <p>Now I will override this method in each class similar to the way I did for
 the <code>Evaluate()</code> method.</p>
 
-{% highlight csharp %}
+```
 class Literal: Expr {
   protected double Value;
 
@@ -329,7 +328,8 @@ class Power: BinaryExpr {
     Console.Write(" ^ ");
   }
 }
-{% endhighlight %}
+```
+
 <p>As you can see, each of the classes needed to be modified to implement
 <code>Print()</code>. You can also note that the compiler
 complained until each of the classes implemented the <code>Print()</code>

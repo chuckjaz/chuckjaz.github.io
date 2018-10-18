@@ -3,7 +3,6 @@ layout: post
 title:  "More Cider at the PDC"
 date:   2005-10-28 13:36:00
 categories: [Programming, Cider]
-permalink: post/2005/10/28/More-Cider-at-the-PDC.aspx
 ---
 Yet more Cider stuff. Brian and Mark tag teamed together at the PDC to
 present how to add design-time behavior to WPF (Avalon) controls. You can find

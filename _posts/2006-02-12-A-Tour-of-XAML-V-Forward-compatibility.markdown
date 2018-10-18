@@ -3,7 +3,6 @@ layout: post
 title:  "A Tour of XAML V: Forward compatibility"
 date:   2006-02-12 18:26:00
 categories: [Programming, XAML]
-permalink: post/2006/02/12/A-Tour-of-XAML-V-Forward-compatibility.aspx
 ---
 As we saw last time, XAML supports backwards compatibility. XAML also
 supports forward compatibility. Forward compatibility is easiest to understand from through a set of examples. Take the balloon

@@ -18,24 +18,24 @@ The first set of algorithms I want to investigate are some of the most
 fundamental, sorting. The simplest sort to write is the selection sort. In C# it
 looks like,
 
-{% highlight csharp %}
+```
 static void SelectionSort(int[] a) {
   for (int i = 0; i < a.Length - 1; i++)
     for (int j = i + 1; j < a.Length; j++)
       if (a[i] > a[j])
   Swap(a, i, j);
 }
-{% endhighlight %}
+```
 
 where `Swap` looks like,
 
-{% highlight csharp %}
+```
 static void Swap<T>(T[] a, int i, int j) {
   T v = a[i];
   a[i] = a[j];
   a[j] = v;
 }
-{% endhighlight %}
+```
 
 This sort finds the smallest item in the list and puts it first, and then it
 finds the second smallest and puts it second, etc. Even though it is very easy
@@ -44,7 +44,7 @@ this by in-lining the `Swap()` method. Additionally, we can limit the number of
 swaps to a.Length by only swapping the value we know is the smallest. A version
 that includes both optimizations is,
 
-{% highlight csharp %}
+```
 static void ImprovedSelectionSort(int[] a) {
   for (int i = 0; i < a.Length - 1; i++) {
     int min = i;
@@ -57,7 +57,7 @@ static void ImprovedSelectionSort(int[] a) {
     a[min] = v;
   }
 }
-{% endhighlight %}
+```
 
 These optimizations are examples of making what we are doing faster.
 Unfortunately, we still with do on the order of O(N<sup>2</sup>) comparisons

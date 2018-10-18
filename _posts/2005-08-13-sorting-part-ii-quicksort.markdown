@@ -33,7 +33,7 @@ array will be sorted.
 An algorithm that takes this very approach is the QuickSort, invented by C.A.R.
 Hoare. A version of which looks like the following,
 
-{% highlight csharp %}
+```
 public class Sorts {
 
   public static void QuickSort(int[] a) {
@@ -69,7 +69,7 @@ public class Sorts {
   if (r > i)
     QSort(a, i, r);
 }
-{% endhighlight %}
+```
 
 If we get lucky and always guess the median value of each of the partitions we
 will only perform O(N log N) comparisons. The worst thing we can do is select a

@@ -18,26 +18,26 @@ with the unconditional comment terminator sequence `/* */` which ensures that th
 comment, but is still a legal sequence of characters outside a comment, you can toggle between
 blocks of code. For example,
 
-{% highlight csharp %}
+```
 /* */
 Console.WriteLine("Option 1");
 /*/
 Console.WriteLine("Option 2");
 /* */
-{% endhighlight %}
+```
 
 This will print “Option 1” to the console. The second
 `WriteLine()` is commented out. With a simple
 one character change, removing the trailing “/” in the first comment, will cause
 “Option 2” to print instead.
 
-{% highlight csharp %}
+```
 /* *
 Console.WriteLine("Option 1");
 /*/
 Console.WriteLine("Option 2");
 /* */
-{% endhighlight %}
+```
 
 The first `WriteLine()` is commented out and the
 second is now not. I use this sometimes to quickly switch between two optional
@@ -47,7 +47,7 @@ applications.
 You can use the unconditional comment terminator to alternate between several
 versions such as,
 
-{% highlight csharp %}
+```
 /* */
 Console.WriteLine("Option 1");
 /* *
@@ -55,13 +55,13 @@ Console.WriteLine("Option 2");
 /* *
 Console.WriteLine("Option 3");
 /* */
-{% endhighlight %}
+```
 
 To select a different option you need to change two characters, such as removing the
 trailing "/" of the first comment and adding one to the third, as in,
 
 
-{% highlight csharp %}
+```
 /* *
 Console.WriteLine("Option 1");
 /* *
@@ -69,20 +69,20 @@ Console.WriteLine("Option 2");
 /* */
 Console.WriteLine("Option 3");
 /* */
-{% endhighlight %}
+```
 
 which will cause "Option 3" to print instead of "Option 1".
 
 Pascal can do the same thing with the its block comment as
 in,
 
-{% highlight pascal %}
+```
 (* *)
 Writeln('Option 1');
 (*)
 Writeln('Option 2');
 (* *)
-{% endhighlight %}
+```
 
 Note that some implementations of C and C++ support nested
 comments and, therefore, the sequence `/*/`

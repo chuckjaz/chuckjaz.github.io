@@ -3,7 +3,6 @@ layout: post
 title:  "Follow-up to Advice"
 date:   2007-02-19 15:24:00
 categories: [Programming]
-permalink: post/2007/02/19/Follow-up-to-Advice.aspx
 ---
 <p>I have to be honest; I didn’t expect the response I
 received from my

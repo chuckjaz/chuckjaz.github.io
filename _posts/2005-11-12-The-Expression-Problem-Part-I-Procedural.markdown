@@ -3,7 +3,6 @@ layout: post
 title:  "The Expression Problem: Part I - Procedural"
 date:   2005-11-12 16:42:00
 categories: [Programming]
-permalink: post/2005/11/12/The-Expression-Problem-Part-I-Procedural.aspx
 ---
 <div class="text"><p>Expressions are difficult to represent because they form a matrix of
 operations and data types. Languages make it either easy to add new operations
@@ -84,7 +83,7 @@ represented as new data types. </p>
 <p>The first approach I will demonstrate is procedural. I define a data type,
 <code>Expr</code>, that will hold the operator and the operands.</p>
 
-{% highlight csharp %}
+<code><pre>
 enum Oper { Add, Subtract, Multiply, Divide, Literal }
 
 class Expr {
@@ -96,10 +95,9 @@ class Expr {
   public Expr(Oper oper, Expr left, Expr right) { ... }
   public Expr(double value) { ... }
 }
-{% endhighlight %}<sup><a href="#note1" name="ref-note1">1</a></sup>
-  <p>The expression evaluation operation for this data structure looks like,</p>
+</pre></code><sup><a href="#note1" name="ref-note1">1</a></sup>
 
-{% highlight csharp %}
+<code><pre>
 static double Evaluate(Expr e) {
   switch (e.Oper) {
     case Oper.Add: return Evaluate(e.Left) + Evaluate(e.Right);
@@ -110,7 +108,7 @@ static double Evaluate(Expr e) {
     default: Debug.Fail("Unknown operator"); return 0;
   }
 }
-{% endhighlight %}
+</pre></code>
 
     <p>The advantages to a procedural approach are,</p>
     <ol>
@@ -124,9 +122,9 @@ static double Evaluate(Expr e) {
       needing to recompile existing operations.</li>
       </ol>
       <p>To demonstrate some of the advantages of using a procedural approach we will
-      add a print operation. It looks like,</p>
+      ```
 
-{% highlight csharp %}
+<code><pre>
 static void Print(Expr e) {
   switch (e.Oper) {
     case Oper.Add: Print(e.Left); Console.Write(" + "); Print(e.Right); break;
@@ -137,8 +135,7 @@ static void Print(Expr e) {
     default: Debug.Fail("Unknown operator"); break;
   }
 }
-{% endhighlight %}
-<sup><a href="#note2" name="ref-note2">2</a></sup>
+</pre></code><sup><a href="#note2" name="ref-note2">2</a></sup>
 
         <p>Adding the <code>Print</code> operation on the <code>Expr</code> type doesn't
         require any modifications to <code>Expr</code> or
@@ -161,6 +158,7 @@ static void Print(Expr e) {
             </ol>
             <p>To demonstrate the difficulty of adding a data type, let's add power support.
             </p>
+            
             <blockquote>
             <table border="0" id="table2">
             <tbody><tr>
@@ -169,26 +167,27 @@ static void Print(Expr e) {
             </tr>
             </tbody></table>
             </blockquote>
+            
+
             <p>This represents the expression <i>x<sup>n</sup></i>. To implement this we first we need to modify the enumeration
             to add <code>Power</code>,</p>
 
-{% highlight csharp %}
+<code><pre>
 enum Oper { Add, Subtract, Multiply, Divide, Literal, Power }
-{% endhighlight %}
-
+</pre></code>
             <p>Next we need to add an additional <i>case statement</i> to <code>Evaluate()</code>'s
             <i>switch statement</i>,</p>
 
-{% highlight csharp %}
+<code><pre>
 case Oper.Power: return Math.Pow(left, right);
-{% endhighlight %}
+</pre></code>
 
             <p>An finally we need to also add another <i>case statement</i> to <code>Print</code>'s
             <i>switch statement </i>that looks like,</p>
 
-{% highlight csharp %}
+<code><pre>
 case Oper.Power: Print.(e.Left); Console.Write(" ^ "); Print(e.Right); break;
-{% endhighlight %}
+</pre></code>
 
             <p>Note we had to modify both operations and the <code>Oper</code> enumeration. If we had several
             operations, we would have had
@@ -211,7 +210,7 @@ case Oper.Power: Print.(e.Left); Console.Write(" ^ "); Print(e.Right); break;
             complicated, so I ignored the waste in favor of simplicity.</p>
             <p>In C++, this is a bit less awkward, and might look like,</p>
 
-{% highlight c %}
+<code><pre>
 struct Expr {
   Oper            oper;
   union {
@@ -224,7 +223,7 @@ struct Expr {
   Expr(Oper oper, Expr *left, Expr *right) { ... }
   Expr(double value) { ... }
 };
-{% endhighlight %}
+</pre></code>
 
               <p>with a very similar evaluation function, but for now we will stick with C#. <a href="#ref-note1">&lt;&lt; back &lt;&lt;</a></p>
               <p><a name="note2" href="#ref-note2">2</a> - For simplicity, I ignored operator precedence. Later I will present a version of

@@ -60,10 +60,11 @@ changes in the code that was generated. In an example
 given in the article, it would be difficult for a
 designer to figure out the mapping between the array,
 
-{% highlight csharp %}
+```
 string[] colors = { "Red", "Orange", "Yellow",  "Green", "Blue",
   "Indigo", "Violet" };
-{% endhighlight %}
+```
+
 and the value passed to the setText() method in the for loop (which isn't actually there in the example, but should be). But, in my mind, this is no excuse, if the language allows it the designer should support it. My solution in the past is to use a language that only allows what the designer supports. In the case of Delphi it was the .DFM file format, and currently, in my "new" job, it is XAML. In these cases, the language is designed in such a way that it is limited to supporting only that which the designer can figure out. This is one of the several reasons I don't like the code generator style of serialization, programmers are tempted to futz with it and the will always use a feature of the serialization language the designer doesn't support. The authors has a point, Java does not make very good serialization language (nor does any other general purpose language).
 
 Going back to the example used in this section (instead of skipping ahead as above), localization and handling dynamic values are typically where designers excel, not fall down. If you separate the logic of the form from the initialization state, you can have localizers just edit the initialization information, not your code (good reason not to code-gen, by the way). The article refers to resource bundles in "capable" GUI builders but it goes beyond that. The entire initialization state should be localizable, not just strings or what the developer might feel generous about allowing the poor localizer to fiddle with. The localizer might need to entirely reorient the form for a right-to-left language, reorganize the form in a more culturally friendly order, etc. If layout is done in code this is notoriously difficult, if not impossible, for localization teams to deal with. Most localization teams I have had the pleasure to interact with require the framework to have a form designer for these very reasons. Don't layout a form in code. Just don't. What assumption you have about how the form will look is culturally biased. Writing layout in code just makes the bias impossible to remove. Localization is a tough, thankless job. Don't make it harder.

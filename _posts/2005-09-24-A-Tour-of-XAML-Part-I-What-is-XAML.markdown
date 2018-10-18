@@ -3,7 +3,6 @@ layout: post
 title:  "A Tour of XAML - Part I: What is XAML?"
 date:   2005-09-24 15:25:00
 categories: [Programming, XAML]
-permalink: post/2005/09/24/A-Tour-of-XAML-Part-I-What-is-XAML.aspx
 ---
 Today I begin a tour of XAML. As <a href="http://www.simplegeek.com">Chris</a>
 said, I have been part of development of XAML. I came fairly late to the game,
@@ -18,10 +17,10 @@ The first question we will cover in our tour is what is XAML anyway? Simply,
 XAML is an XML based object initialization language. Its job in life is to
 create a tree of objects. For example, consider the following XAML file,
 
-{% highlight xml %}
+```
 <Button Content="Hello, world!"
   xmlns="http://schemas.microsoft.com/winfx/avalon/2005" />
-{% endhighlight %}
+```
 
 This creates an instance of `System.Windows.Controls.Button` and
 sets the `Content1` property to the sting value
@@ -33,11 +32,11 @@ is because of the `xmlns` declaration in the
 is hidden in the Avalon assemblies themselves. They contain an assembly
 attribute that looks like,
 
-{% highlight csharp %}
+```
 [assembly: XmlnDefinition(
   "http://schemas.microsoft.com/winfx/avalon/2005",
   "System.Windows.Controls")]
-{% endhighlight %}
+```
 
 It actually has several more definitions like this to associate several other
 CLR namespaces with the Avalon XML namespace, but this is the one used above.
@@ -60,10 +59,10 @@ class with its `Content` property set to the value
 
 If we change the XAML to,
 
-{% highlight xml %}
+```
 <Button Content="Hello, world!" IsDefault="True"
   xmlns="http://schemas.microsoft.com/winfx/avalon/2005" />
-{% endhighlight %}
+```
 
 adding the phrase `IsDefault="True"` which causes the loader to find the
 `IsDefault` property introduced on the `Button` class itself. The `IsDefault`

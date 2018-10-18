@@ -3,7 +3,6 @@ layout: post
 title:  "Scanners (not the movie)"
 date:   2007-12-30 17:01:00
 categories: [Programming]
-permalink: 2007/12/30/Scanners-(not-the-movie).aspx
 ---
 <div class="text"><p>In my previous post I introduced a program I wrote to that uses the method
 described in

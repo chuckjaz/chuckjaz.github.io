@@ -3,7 +3,6 @@ layout: post
 title:  "PolyDictionary II: Constructed Keys"
 date:   2007-03-21 15:47:00
 categories: [Programming]
-permalink: post/2007/03/21/PolyDictionary-II-Constructed-Keys.aspx
 ---
 <p>In the last entry we defined a dictionary that can contain a value of any 
 type and extra that value out of the dictionary without our code using a cast.

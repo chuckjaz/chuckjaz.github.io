@@ -3,7 +3,6 @@ layout: post
 title:  "Cider demo'ed at the PDC"
 date:   2005-10-04 12:34:00
 categories: [Programming, Cider]
-permalink: post/2005/10/04/Cider-demoed-at-the-PDC.aspx
 ---
 If you missed the PDC and Eric Rudder's keynote address where Cider was
 demonstrated you can watch it <a href="http://msdn.microsoft.com/events/pdc/">
